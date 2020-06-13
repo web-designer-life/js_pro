@@ -1,17 +1,17 @@
-let text;
+let arr = ['1234', '2345', '3456', '4567', '5678', '6789', '7890'];
 
-text = prompt('Введите аргумент');
-console.log(omg(text));
-
-function omg(text) {
-    if (typeof text !== 'string') {
-        return ('В качестве аргумента передана не строка');
-    }
-    text = text.trim(); 
-    if (text.length > 50) {
-        return text.slice(0, 50) + '...';
-    } else {
-        return text;
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i].substr(0, 1) == 2 || arr[i].substr(0, 1) == 4) {
+        console.log(arr[i]);
     }
 }
 
+no:
+for (let i = 1; i < 101; i++) {
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0) {
+       continue no; 
+    }
+  }
+  console.log('Число ' + i + ' - простое. Делители: 1 и ' + i + '.');
+}
