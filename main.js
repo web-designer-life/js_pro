@@ -8,11 +8,11 @@ if (today == 0) {
 for (let i = 0; i < week.length; i++) {
     if (i != today) {
         if (i == 5 || i == 6) {
-            console.log(week[i].italics());
+            document.write(week[i].italics() + '<br>');
         } else {
-            console.log(week[i]);
+            document.write(week[i] + '<br>');
         }
     } else {
-        console.log(week[i].bold());
+        document.write(week[i].bold() + '<br>');
     }
 }
