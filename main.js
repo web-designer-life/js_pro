@@ -1,17 +1,18 @@
-let arr = ['1234', '2345', '3456', '4567', '5678', '6789', '7890'];
-
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i].substr(0, 1) == 2 || arr[i].substr(0, 1) == 4) {
-        console.log(arr[i]);
-    }
+var week = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
+today = new Date().getDay();
+if (today == 0) {
+    today = 6;
+} else {
+    today -= 1;
 }
-
-no:
-for (let i = 1; i < 101; i++) {
-  for (let j = 2; j < i; j++) {
-    if (i % j === 0) {
-       continue no; 
+for (let i = 0; i < week.length; i++) {
+    if (i != today) {
+        if (i == 5 || i == 6) {
+            console.log(week[i].italics());
+        } else {
+            console.log(week[i]);
+        }
+    } else {
+        console.log(week[i].bold());
     }
-  }
-  console.log('Число ' + i + ' - простое. Делители: 1 и ' + i + '.');
 }
