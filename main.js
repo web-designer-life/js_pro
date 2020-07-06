@@ -20,7 +20,7 @@ let flyAnimate = function() {
     } else if (i == 1 && count == 0){
         i = 0;
     }
-}
+};
 
 go.addEventListener('click', function() {
     if (animate) {
