@@ -4,10 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            align-items: center;
+        }
+        .bob {
+            position: relative;
+            margin-top: 20px;
+        }
+        button {
+            position: relative;
+            top: 110px;
+            border-radius: 50px;
+            padding: 5px 15px;
+            background-color: aquamarine;
+            color: black;
+            font-size: large;
+            font-family: sans-serif;
+            border: 2px solid black;
+            max-width: 200px;
+            margin-bottom: 10px;
+            outline: none;
+        }
+    </style>
 </head>
 <body>
-    <p id='p1'></p>
-    <p id='p2'></p>
+    <div class="container">
+        <div class="bob">
+            <img src="https://www.freepnglogos.com/uploads/spongebob-png/spongebob-squarepants-glore-season-png-pack-4.png" alt="spongebob">
+        </div>
+        <button id="#go">Анимация</button>
+        <button id="#reset">Reset</button>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
