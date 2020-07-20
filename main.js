@@ -1,40 +1,19 @@
-let bob = document.querySelector('.bob'),
-    count = 0,
-    i = 0,
-    go = document.getElementById('#go'),
-    reset = document.getElementById('#reset'),
-    flyInterval,
-    animate = true;
+const colorBtn = document.getElementById('#choice'),
+    body = document.querySelector('body'),
+    colorNumber = document.querySelector('.color');
 
-let flyAnimate = function() {
-    flyInterval = requestAnimationFrame(flyAnimate);
-    if (i == 0 && count < 100) {
-        count = count + 5;
-        bob.style.top = count + 'px';
-    } else if (i == 0 && count == 100){
-        i = 1;
-    }
-    if (i == 1 && count > 0) {
-        count = count - 5;
-        bob.style.top = count + 'px';
-    } else if (i == 1 && count == 0){
-        i = 0;
-    }
+const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+
+    colorBtn.addEventListener('click', () => {
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        body.style.backgroundColor = color;
+        colorNumber.textContent = color;
+        colorBtn.style.color = color;
+    });
 };
 
-go.addEventListener('click', function() {
-    if (animate) {
-        flyInterval = requestAnimationFrame(flyAnimate);
-        animate = false;
-    } else {
-        animate = true;
-        cancelAnimationFrame(flyInterval);
-    }
-});
-
-reset.addEventListener('click', function() {
-    cancelAnimationFrame(flyInterval);
-    count = 0;
-    bob.style.top = 0 + 'px';
-    animate = true;
-});
+getRandomColor();

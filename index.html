@@ -5,39 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            background-color: black;
+        }
         .container {
             display: flex;
             flex-direction: column;
             margin: auto;
             align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: auto;
         }
-        .bob {
-            position: relative;
-            margin-top: 20px;
+        .color {
+            color: white;
+            font-size: 25px;
+            font-family: sans-serif;
+            transition-duration: 0.2s;
         }
         button {
             position: relative;
-            top: 110px;
-            border-radius: 50px;
-            padding: 5px 15px;
-            background-color: aquamarine;
+            border-radius: 10px;
+            padding: 30px 50px;
+            background-color: white;
             color: black;
-            font-size: large;
+            font-size: 25px;
             font-family: sans-serif;
-            border: 2px solid black;
-            max-width: 200px;
+            border: none;
             margin-bottom: 10px;
             outline: none;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(150, 150, 150);
+            transition-duration: 0.2s;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="bob">
-            <img src="https://www.freepnglogos.com/uploads/spongebob-png/spongebob-squarepants-glore-season-png-pack-4.png" alt="spongebob">
-        </div>
-        <button id="#go">Анимация</button>
-        <button id="#reset">Reset</button>
+        <p class="color">#000000</p>
+        <button id="#choice">Анимация</button>
     </div>
     <script src="main.js"></script>
 </body>
